@@ -6,6 +6,8 @@ const app = express()
 
 app.use(express.json());
 
+app.get('/users/:id', userController.getById);
+
 app.get('/users', userController.getAll);
 
 
