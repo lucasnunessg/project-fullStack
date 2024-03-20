@@ -25,11 +25,19 @@ const updateUser = async (id, full_name, email, contact) => {
     );
     
     return updateUser;
-}
+};
+
+const deleteUser = async (id) => {
+    const user = User.destroy({
+        where: { id }
+    });
+    return user;
+};
 
 module.exports = {
     getAll,
     getById,
     createUser,
     updateUser,
+    deleteUser,
 }

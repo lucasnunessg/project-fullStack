@@ -49,6 +49,18 @@ const updateUser = async (req, res) => {
         console.log(e.message);
         res.status(500).json({ message: error500Message })
     }
+};
+
+const deleteUser = async (req, res) => {
+    try {
+        const { id } = req.params
+        await userService.deleteUser(id);
+
+        return res.status(200).json({ message: 'Usuário excluído com sucesso!' });
+    } catch (e) {
+        console.log(e.message)
+        res.status(500).json({ message: error500Message });
+    }
 }
 
 module.exports = {
@@ -56,4 +68,5 @@ module.exports = {
     getById,
     createUser,
     updateUser,
+    deleteUser,
 }
