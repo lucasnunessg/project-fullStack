@@ -8,8 +8,5 @@ app.use(express.json());
 
 app.get('/users', userController.getAll);
 
-app.get('/',(_req, res) => {
-    res.status(200).json({ message: 'to vivo' })
-})
 
 module.exports = app;
